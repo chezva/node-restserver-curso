@@ -158,6 +158,7 @@ app.post('/productos', verificaToken, (req, res) => {
         nombre: body.nombre,
         precioUni: body.precioUni,
         descripcion: body.descripcion,
+        img: body.img,
         categoria: body.categoria,
         usuario: req.usuario._id
     });
@@ -181,7 +182,7 @@ app.post('/productos', verificaToken, (req, res) => {
         // Si todo sale bien, ok será true y muetro la categoria que se agregó
         res.json({
             ok: true,
-            usuario: productoDB
+            producto: productoDB
         });
     })
 
